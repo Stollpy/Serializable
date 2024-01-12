@@ -18,8 +18,8 @@ trait Serializable
         foreach ($ref->getProperties() as $property) {
             if (
                 !in_array($property->getName(), ["whitelist", "blacklist"]) &&
-                $this->checkWhitelist($property, $object) &&
-                !$this->checkBlacklist($property, $object)
+                $this->isInWhitelist($property, $object) &&
+                !$this->isInBlacklist($property, $object)
             ) {
                 $value = $this->extractValueFromProperty($property, $object);
                 $data[$property->getName()] = $this->extractValueFromType($value);
@@ -29,7 +29,7 @@ trait Serializable
         return $data;
     }
 
-    private function checkWhitelist(\ReflectionProperty $property, object $object): bool
+    private function isInWhitelist(\ReflectionProperty $property, object $object): bool
     {
         $ref = new \ReflectionClass($object);
         $whitelist = [];
@@ -52,7 +52,7 @@ trait Serializable
         return in_array($property->getName(), $whitelist);
     }
 
-    private function checkBlacklist(\ReflectionProperty $property, object $object): bool
+    private function isInBlacklist(\ReflectionProperty $property, object $object): bool
     {
         $ref = new \ReflectionClass($object);
         $blacklist = [];
