@@ -41,7 +41,7 @@ trait Serializable
         }
 
         if ($ref->hasMethod("whitelist")) {
-            $whitelist = $this->whitelist();
+            $whitelist = $object->whitelist();
             $whitelistExist = true;
         }
 
@@ -64,7 +64,7 @@ trait Serializable
         }
 
         if ($ref->hasMethod("blacklist")) {
-            $blacklist = $this->blacklist();
+            $blacklist = $object->blacklist();
             $blacklistExist = true;
         }
 
