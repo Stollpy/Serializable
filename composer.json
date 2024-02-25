@@ -1,5 +1,5 @@
 {
-  "name": "laradev/serializable",
+  "name": "wearelaradev/serializable",
   "description": "Serializable trait",
   "type": "package",
   "require": {

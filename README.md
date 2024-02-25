@@ -7,7 +7,7 @@ It also enables any object implementing this trait to become a serializer in its
 ## Getting started
 
 ```bash
-    composer require laradev/serializable
+    composer require wearelaradev/serializable
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ var_dump((new MyObject())->toJson());
 
 ### Used with of getters
 ```php
-use Laraved\Serializable\Serializable;
+use Laradev\Serializable\Serializable;
 
 class MyObject 
 {
@@ -71,7 +71,7 @@ You can apply a whitelist or blacklist strategy to your serializer properties us
 
 ##### Whitelist 
 ```php
-use Laraved\Serializable\Serializable;
+use Laradev\Serializable\Serializable;
 
 class MyObject 
 {
@@ -95,7 +95,7 @@ var_dump((new MyObject())->toJson());
 
 ##### Blacklist
 ```php
-use Laraved\Serializable\Serializable;
+use Laradev\Serializable\Serializable;
 
 class MyObject 
 {
@@ -121,7 +121,7 @@ var_dump((new MyObject())->toJson());
 
 ##### Whitelist
 ```php
-use Laraved\Serializable\Serializable;
+use Laradev\Serializable\Serializable;
 
 class MyObject 
 {
@@ -149,7 +149,7 @@ var_dump((new MyObject())->toJson());
 
 ##### Blacklist
 ```php
-use Laraved\Serializable\Serializable;
+use Laradev\Serializable\Serializable;
 
 class MyObject 
 {
