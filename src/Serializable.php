@@ -5,7 +5,7 @@
  * (c) Darras Florian florian@laradev.ca
  */
 
-use ArrayAccess;
+namespace Laradev\Serializable;
 
 trait Serializable
 {
@@ -97,7 +97,7 @@ trait Serializable
 
     private function extractValueFromType(mixed $attr): mixed
     {
-        if (is_array($attr) || $attr instanceof ArrayAccess) {
+        if (is_array($attr) || $attr instanceof \ArrayAccess) {
             $data = [];
             foreach ($attr as $key => $value) {
                 $data[$key] = $this->extractValueFromType($value);
